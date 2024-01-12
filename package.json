@@ -1,0 +1,38 @@
+{
+  "name": "vh-stack",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && rollup -c rollup.config.mjs",
+    "start": "cross-env NODE_ENV=production node dist/server.js",
+    "lint": "biome check --apply .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.4.0",
+    "@hono/zod-validator": "^0.1.11",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "cross-env": "^7.0.3",
+    "glob": "^10.3.10",
+    "hono": "^3.12.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.9.5",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.1",
+    "@hono/vite-dev-server": "^0.3.4",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
+}
