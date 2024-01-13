@@ -2,7 +2,14 @@ import Todo from "../models/Todo";
 
 export default class TodoService {
 	private idCounter = 0;
-	private store: (Todo | null)[] = [];
+	private store: (Todo | null)[] = [
+		{
+			deadline: new Date(),
+			id: 1,
+			title: "Finish App",
+			description: "Complete Application",
+		},
+	];
 
 	async list() {
 		const list = this.store.filter((item) => item !== null) as Todo[];

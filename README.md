@@ -8,6 +8,7 @@ Spark Flow is a tool for collaborative ideation and productivity
 
 - Built off of Vite's React Typescript Starter
 - API Server made with Hono
+- Tanstack Router and Query
 - Typesafe validation with Zod
 - Linting & Formatting with Biome
 

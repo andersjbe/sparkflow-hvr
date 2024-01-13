@@ -1,7 +1,12 @@
+import { FileRoute } from "@tanstack/react-router";
 // views/index.tsx
 import { useEffect, useState } from "react";
-import Todo from "../models/Todo";
-import { api } from "../utils/frontend";
+import Todo from "../../models/Todo";
+import { api } from "../../utils/frontend";
+
+export const Route = new FileRoute('/').createRoute({
+	component: IndexPage,
+});
 
 export function IndexPage() {
 	const [todoList, setTodoList] = useState<Todo[]>([]);

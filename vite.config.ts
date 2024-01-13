@@ -1,4 +1,5 @@
 import devServer from "@hono/vite-dev-server";
+import { TanStackRouterVite } from "@tanstack/router-vite-plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
@@ -12,6 +13,7 @@ export default defineConfig({
 	},
 	plugins: [
 		react(),
+		TanStackRouterVite(),
 		devServer({
 			entry: "server.ts",
 			exclude: [
