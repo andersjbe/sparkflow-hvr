@@ -26,7 +26,8 @@ window.__vite_plugin_react_preamble_installed__ = true
 	);
 }
 
-const app = new Hono()
+const hono = new Hono();
+const app = hono
 	.use("*", async (c, next) => {
 		c.res.headers.set("X-Powered-By", "Hono");
 		await next();

@@ -8,11 +8,15 @@
     "build": "tsc && vite build && rollup -c rollup.config.mjs",
     "start": "cross-env NODE_ENV=production node dist/server.js",
     "lint": "biome check --apply .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "db:push": "prisma db push"
   },
   "dependencies": {
     "@hono/node-server": "^1.4.0",
     "@hono/zod-validator": "^0.1.11",
+    "@lucia-auth/adapter-prisma": "^3.0.2",
+    "@lucia-auth/oauth": "^3.5.1",
+    "@prisma/client": "^5.8.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
@@ -22,8 +26,11 @@
     "@tanstack/router-devtools": "^1.4.2",
     "@tanstack/router-vite-plugin": "^1.4.2",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
     "glob": "^10.3.10",
     "hono": "^3.12.3",
+    "lucia": "^2.7.6",
+    "nanoid": "^5.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^4.9.5",
@@ -37,6 +44,7 @@
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.55.0",
+    "prisma": "^5.8.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }

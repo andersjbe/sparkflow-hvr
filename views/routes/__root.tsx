@@ -22,18 +22,10 @@ function RootComponent() {
 				>
 					Home
 				</Link>{" "}
-				<Link
-					to="/layout-a"
-					activeProps={{
-						className: "font-bold",
-					}}
-				>
-					Layout
-				</Link>
 			</div>
 			<hr />
 			<Outlet />
-			<ReactQueryDevtools buttonPosition="top-right" />
+			<ReactQueryDevtools buttonPosition="bottom-left" />
 			<TanStackRouterDevtools position="bottom-right" />
 		</>
 	);

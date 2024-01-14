@@ -1,36 +1,27 @@
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { FileRoute } from "@tanstack/react-router";
-// views/index.tsx
-import { useEffect, useState } from "react";
-import Todo from "../../models/Todo";
-import { api } from "../../utils/frontend";
+import { userQueryOpts } from "../queries";
 
 export const Route = new FileRoute('/').createRoute({
+	loader: ({ context: { queryClient } }) =>
+		queryClient.ensureQueryData(userQueryOpts),
 	component: IndexPage,
 });
 
-export function IndexPage() {
-	const [todoList, setTodoList] = useState<Todo[]>([]);
-
-	useEffect(() => {
-		(async () => {
-			const res = await api.todo.list.$get();
-			const result = await res.json();
-
-			if (result.success) {
-				setTodoList(result.data);
-			} else {
-				setTodoList([]);
-			}
-		})();
-	}, []);
+function IndexPage() {
+	const { data } = useSuspenseQuery(userQueryOpts);
 
 	return (
 		<>
-			<ul>
-				{todoList.map((todo) => (
-					<li key={todo.id}>{todo.title}</li>
-				))}
-			</ul>
+			<h1>Hello World!</h1>
+			{!data.user ? (
+				<a href="/api/login/google">Login with Google </a>
+			) : (
+				<>
+					<h2>User Data:</h2>
+					<p>{data.user.name}</p>
+				</>
+			)}
 		</>
 	);
 }

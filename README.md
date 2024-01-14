@@ -11,6 +11,9 @@ Spark Flow is a tool for collaborative ideation and productivity
 - Tanstack Router and Query
 - Typesafe validation with Zod
 - Linting & Formatting with Biome
+- Prisma
+- Planetscale (MySQL)
+- Lucia Auth
 
 ## References/Resources
 
